@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Bienvenido,\n\n a su propio MovieManager!\n</string>
+    <string name="advice">Pulse el icono de signo más (+) en la Barra de acciones para agregar una película.\nPresione el icono de lista de la Barra de acciones para ver la lista.</string>
+    <string name="action_addMovie">Añadir película</string>
+    <string name="title_activity_add_movie">AñadirPelículaActividad</string>
+
+    <string name="movieTitleLabel">Título:</string>
+    <string name="movieDirectorLabel">Directores:</string>
+    <string name="movieActorsLabel">Actores:</string>
+    <string name="movieWatchedOnLabel">Vimos en:</string>
+    <string name="movieCityLabel">Ciudad:</string>
+
+    <string name="titlePlaceholder">Introduzca el título aquí ...</string>
+    <string name="directorPlaceholder">Introduzca el director aquí ...</string>
+    <string name="actorsPlaceholder">Introduzca actores aquí ...</string>
+    <string name="watchedOnPlaceholder">Introduce la fecha aquí ...</string>
+    <string name="cityPlaceholder">Introduzca ciudad aquí...</string>
+    <string name="submitButtonText">Envíe su película Miró!</string>
+    <string name="title_activity_movie_list">PelículaListaDeActividades</string>
+    <string name="titleDialog">Eliminar la película de la lista?</string>
+    <string name="messageDialog">¿Realmente desea eliminar la película: %1$s de la lista?</string>
+    <string name="cancel">cancelar</string>
+    <string name="delete">borrar</string>
+    <string name="action_showMovieList">Mostrar lista de películas</string>
+</resources>

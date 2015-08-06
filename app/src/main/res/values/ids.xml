@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="imageId" type="id" />
+    <item name="movieTitle" type="id" />
+    <item name="movieDirector" type="id" />
+    <item name="movieActors" type="id" />
+    <item name="movieWatchedOn" type="id" />
+    <item name="movieCity" type="id" />
+    <item name="deleteButton" type="id" />
+</resources>

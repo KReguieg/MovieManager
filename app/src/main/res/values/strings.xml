@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">MovieManager</string>
+
+    <string name="hello">Welcome,\n\nto your very own MovieManager!\n</string>
+    <string name="advice">
+        Press the plus(+) icon in the actionbar to add a movie.\nPress the list icon in the actionbar to see the list.</string>
+    <string name="action_addMovie">Add Movie</string>
+    <string name="title_activity_add_movie">AddMovieActivity</string>
+
+    <string name="movieTitleLabel">Title:</string>
+    <string name="movieDirectorLabel">Directors:</string>
+    <string name="movieActorsLabel">Actors:</string>
+    <string name="movieWatchedOnLabel">Watched on:</string>
+    <string name="movieCityLabel">City:</string>
+
+    <string name="titlePlaceholder">Enter the title here...</string>
+    <string name="directorPlaceholder">Enter the director here...</string>
+    <string name="actorsPlaceholder">Enter actors here...</string>
+    <string name="watchedOnPlaceholder">Enter date here...</string>
+    <string name="cityPlaceholder">Enter city here...</string>
+    <string name="submitButtonText">Submit Your Watched Movie!</string>
+    <string name="title_activity_movie_list">MovieListActivity</string>
+    <string name="action_showMovieList">Show Movie List</string>
+    <string name="titleDialog">Delete movie from List?</string>
+    <string name="messageDialog">Do you really want to delete the movie: %1$s from the list?</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+</resources>
