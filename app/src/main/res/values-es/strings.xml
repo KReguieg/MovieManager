@@ -16,11 +16,15 @@
     <string name="actorsPlaceholder">Introduzca actores aquí ...</string>
     <string name="watchedOnPlaceholder">Introduce la fecha aquí ...</string>
     <string name="cityPlaceholder">Introduzca ciudad aquí...</string>
-    <string name="submitButtonText">Envíe su película Miró!</string>
+    <string name="submitButtonText">Enviar película!</string>
     <string name="title_activity_movie_list">PelículaListaDeActividades</string>
     <string name="titleDialog">Eliminar la película de la lista?</string>
-    <string name="messageDialog">¿Realmente desea eliminar la película: %1$s de la lista?</string>
+    <string name="messageDialog">¿Realmente desea eliminar la película: \"%1$s\" de la lista?</string>
     <string name="cancel">cancelar</string>
     <string name="delete">borrar</string>
     <string name="action_showMovieList">Mostrar lista de películas</string>
+    <string name="error_title">Oops! Sorry!</string>
+    <string name="error_message">There was an error. Please try again.</string>
+    <string name="error_okBtnText">OK!</string>
+    <string name="network_unavailable_message">Network is unavailable!</string>
 </resources>

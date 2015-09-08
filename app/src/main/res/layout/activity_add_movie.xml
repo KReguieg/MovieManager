@@ -1,94 +1,124 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#009688"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#009688">
+    android:paddingTop="@dimen/activity_vertical_margin">
 
     <ImageView
         android:id="@+id/headerImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/storm_trooper"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/storm_trooper"
+        android:contentDescription="@string/addMovieIconDescription" />
 
     <TextView
         android:id="@+id/movieTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/movieTitleLabel"
-        android:layout_below="@id/headerImage"/>
+        android:layout_below="@id/headerImage"
+        android:text="@string/movieTitleLabel" />
+
     <EditText
         android:id="@+id/movieTitleEditText"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/movieTitleTextView"
-        android:hint="@string/titlePlaceholder"/>
+        android:hint="@string/titlePlaceholder"
+        android:textCursorDrawable="@null" />
+
     <TextView
         android:id="@+id/movieDirectorTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/movieTitleEditText"
-        android:text="@string/movieDirectorLabel"/>
+        android:text="@string/movieDirectorLabel" />
+
     <EditText
         android:id="@+id/movieDirectorEditText"
+        style="@style/App_EditTextStyle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/movieDirectorTextView"
         android:hint="@string/directorPlaceholder"
-        style="@style/App_EditTextStyle" />
+        android:textCursorDrawable="@null" />
+
     <TextView
         android:id="@+id/movieActorsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/movieDirectorEditText"
-        android:text="@string/movieActorsLabel"/>
+        android:text="@string/movieActorsLabel" />
+
     <EditText
         android:id="@+id/movieActorsEditText"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/movieActorsTextView"
-        android:hint="@string/actorsPlaceholder"/>
+        android:hint="@string/actorsPlaceholder"
+        android:textCursorDrawable="@null" />
+
     <TextView
         android:id="@+id/movieWatchedOnTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/movieActorsEditText"
-        android:text="@string/movieWatchedOnLabel"/>
+        android:text="@string/movieWatchedOnLabel" />
+
     <EditText
+        android:id="@+id/movieWatchedOnEditText"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:inputType="date"
-        android:ems="10"
-        android:id="@+id/movieWatchedOnEditText"
         android:layout_below="@+id/movieWatchedOnTextView"
         android:layout_centerHorizontal="true"
-        android:hint="@string/watchedOnPlaceholder"/>
+        android:ems="10"
+        android:hint="@string/watchedOnPlaceholder"
+        android:inputType="date"
+        android:textCursorDrawable="@null" />
+
     <TextView
         android:id="@+id/movieCityTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/movieWatchedOnEditText"
-        android:text="@string/movieCityLabel"/>
+        android:text="@string/movieCityLabel" />
+
     <EditText
         android:id="@+id/movieCityEditText"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:layout_below="@+id/movieCityTextView"
-        android:hint="@string/cityPlaceholder"/>
+        android:layout_centerVertical="true"
+        android:hint="@string/cityPlaceholder"
+        android:textCursorDrawable="@null" />
+
+    <CheckBox
+        android:id="@+id/locationCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/movieCityEditText"
+        android:layout_below="@id/movieCityTextView"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@id/movieCityEditText"
+        android:layout_toRightOf="@id/movieCityEditText"
+        android:hint="@string/addMovieUseGpsCheckBoxHint"
+        android:textColor="@color/primaryTextColor"
+        android:textColorHint="@color/primaryTextColor" />
+
     <Button
         android:id="@+id/submitWatchedMovieButton"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/submitButtonText"
-        android:background="#F24236"
-        style="?android:attr/borderlessButtonStyle"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:background="#F24236"
+        android:text="@string/submitButtonText" />
 
 </RelativeLayout>

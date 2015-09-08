@@ -9,6 +9,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -19,12 +22,35 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * Created by Khaled Reguieg <a href="mailto:Khaled.Reguieg@gmail.com">Khaled Reguieg</a> on 04.08.2015.
+ * This class represents the list of movies a user has been adding and presents it in a nice look and feel.
+ */
 public class MovieListActivity extends AppCompatActivity {
 
+    /**
+     * The list of all movies.
+     */
     ArrayList<Movie> movieList = new ArrayList<Movie>();
+
+    /**
+     * The LinearLayout holding all the list elements and handling the vertical scrolling.
+     */
     LinearLayout movieListLinearLayout;
+
+    /**
+     * The random number for choosing colors and images.
+     */
     int mRndNumber;
+
+    /**
+     * The SQLiteHelper instance of my class, which handles the database.
+     */
     MovieSQLiteHelper movieSQLiteHelper;
+
+    /**
+     * The SQLite database;
+     */
     SQLiteDatabase db;
 
     @Override
@@ -47,7 +73,7 @@ public class MovieListActivity extends AppCompatActivity {
     }
 
     /**
-     * This Method create the layout and fills the vertical scrolling list with the layouts created.
+     * This Method creates the layout and fills the vertical scrolling list with the layouts created.
      */
     public void fillListView() {
         // Get stuff from the database
@@ -64,7 +90,7 @@ public class MovieListActivity extends AppCompatActivity {
             } while (c.moveToNext());
         }
 
-        Integer[] preferedColors = new Integer[]{0xFFC41E3D, 0xFF7D1128, 0xFF4BB1A0, 0xFF055864, 0xFF19647E};
+        Integer[] preferredColors = new Integer[]{0xFFC41E3D, 0xFF7D1128, 0xFF4BB1A0, 0xFF055864, 0xFF19647E};
         Integer[] drawableIds = new Integer[]{
                 R.drawable.darth_vader, R.drawable.death_star,
                 R.drawable.storm_trooper,
@@ -75,15 +101,17 @@ public class MovieListActivity extends AppCompatActivity {
         for (Movie m : movieList) {
             int lastRnd = mRndNumber;
             do {
-                mRndNumber = new Random().nextInt(preferedColors.length);
+                mRndNumber = new Random().nextInt(preferredColors.length);
             }
             while (lastRnd == mRndNumber);
             RelativeLayout rl = new RelativeLayout(this);
-            RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
-            lp.setMargins(5, 25, 5, 5);
-            rl.setLayoutParams(lp);
-            System.out.println("RND=" + mRndNumber + " || " + preferedColors[mRndNumber]);
-            rl.setBackgroundColor(preferedColors[mRndNumber]);
+            LinearLayout.LayoutParams relativeParams = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT);
+            relativeParams.setMargins(0, 0, 0, 25);
+            rl.setLayoutParams(relativeParams);
+            rl.requestLayout();
+            rl.setBackgroundColor(preferredColors[mRndNumber]);
             rl.invalidate();
             ImageView movieImage = new ImageView(this);
             movieImage.setId(R.id.imageId);
@@ -132,7 +160,7 @@ public class MovieListActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     AlertDialog.Builder alert = new AlertDialog.Builder(MovieListActivity.this);
-                    alert.setTitle(R.string.titleDialog);
+                    alert.setTitle(Html.fromHtml("<font color='#000000'>" + getString(R.string.titleDialog) + "</font>"));
                     Resources res = getResources();
                     String text = String.format(res.getString(R.string.messageDialog), movieTitle.getText().toString());
 
@@ -142,7 +170,6 @@ public class MovieListActivity extends AppCompatActivity {
                             if (db != null) {
                                 db.delete("movie", "title = ?", new String[]{movieTitle.getText().toString()});
                             }
-                            db.close();
                             View parent = (View) deleteButton.getParent().getParent();
                             parent.setVisibility(View.GONE);
                         }
@@ -170,5 +197,34 @@ public class MovieListActivity extends AppCompatActivity {
             rl.addView(carrierRL);
             movieListLinearLayout.addView(rl);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_movie_list, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        if (id == R.id.action_addMovie) {
+            Intent intent = new Intent();
+            intent.setClass(getBaseContext(), AddMovieActivity.class);
+            startActivity(intent);
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        db.close();
     }
 }

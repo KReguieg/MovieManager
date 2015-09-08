@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#009688"
@@ -7,79 +7,12 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin">
 
-    <ScrollView
+
+    <LinearLayout
+        android:id="@+id/movieListLinearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/movieListLinearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!--<RelativeLayout
-                android:id="@+id/listItem1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#044B7F">
-
-                <ImageView
-                    android:id="@+id/imageTitleId"
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/yoda" />
-
-                <RelativeLayout
-                    android:id="@+id/textRelativeLayout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/imageTitleId">
-
-                    <TextView
-                        android:id="@+id/movieTitleListTextView"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="28sp" />
-
-                    <TextView
-                        android:id="@+id/movieDirectorListTextView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/movieTitleListTextView"
-                        android:textSize="24sp" />
-
-                    <TextView
-                        android:id="@+id/movieActorsListTextView"
-                        android:layout_width="match_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_below="@id/movieDirectorListTextView"/>
-
-                    <TextView
-                        android:id="@+id/movieWatchedOnListTextView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/movieActorsListTextView"/>
-
-                    <TextView
-                        android:id="@+id/movieCityListTextView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/movieWatchedOnListTextView"/>
-
-                    <ImageButton
-                        android:id="@+id/deleteBtn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@mipmap/ic_delete_white_24dp"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentEnd="true" />
-                </RelativeLayout>
-
-            </RelativeLayout> -->
-        </LinearLayout>
-    </ScrollView>
-
-
-</RelativeLayout>
+    </LinearLayout>
+</ScrollView>

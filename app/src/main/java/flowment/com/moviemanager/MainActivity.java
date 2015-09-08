@@ -9,9 +9,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+/**
+ * Created by Khaled Reguieg <a href="mailto:Khaled.Reguieg@gmail.com">Khaled Reguieg</a> on 04.08.2015.
+ * This class represents the MainActivity of the MovieManager App.
+ * It will be the launching Activity and displays two navigation options:
+ * Add Movie || Show Movie List
+ */
 public class MainActivity extends AppCompatActivity {
 
     private boolean doubleBackToExitPressedOnce;
+    private final Runnable mRunnable = new Runnable() {
+        @Override
+        public void run() {
+            doubleBackToExitPressedOnce = false;
+        }
+    };
     private Handler mHandler = new Handler();
 
     @Override
@@ -41,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
-        if (id == R.id.action_viewMovielist) {
+        if (id == R.id.action_viewMovieList) {
             Intent intent = new Intent(this, MovieListActivity.class);
             intent.putExtra("activity", "first");
             startActivity(intent);
@@ -49,13 +61,6 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-    private final Runnable mRunnable = new Runnable() {
-        @Override
-        public void run() {
-            doubleBackToExitPressedOnce = false;
-        }
-    };
 
     @Override
     protected void onDestroy() {

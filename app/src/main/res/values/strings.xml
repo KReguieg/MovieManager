@@ -22,7 +22,13 @@
     <string name="title_activity_movie_list">MovieListActivity</string>
     <string name="action_showMovieList">Show Movie List</string>
     <string name="titleDialog">Delete movie from List?</string>
-    <string name="messageDialog">Do you really want to delete the movie: %1$s from the list?</string>
+    <string name="messageDialog">Do you really want to delete the movie: \"%1$s\" from the list?</string>
     <string name="cancel">Cancel</string>
     <string name="delete">Delete</string>
+    <string name="addMovieIconDescription">Star Wars headhunter head icon</string>
+    <string name="addMovieUseGpsCheckBoxHint">Use GPS for City?</string>
+    <string name="error_title">Oops! Sorry!</string>
+    <string name="error_message">There was an error. Please try again.</string>
+    <string name="error_okBtnText">OK!</string>
+    <string name="network_unavailable_message">Network is unavailable!</string>
 </resources>

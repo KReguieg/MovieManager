@@ -21,7 +21,11 @@
     <string name="title_activity_movie_list">MovieListActivity</string>
     <string name="action_showMovieList">Zeige Film Liste</string>
     <string name="titleDialog">Video aus Liste löschen?</string>
-    <string name="messageDialog">Sind Sie sicher, dass sie den Film: %1$s von der Liste löschen möchten?</string>
+    <string name="messageDialog">Sind Sie sicher, dass sie den Film: \"%1$s\" von der Liste löschen möchten?</string>
     <string name="cancel">Abbrechen</string>
     <string name="delete">Löschen</string>
+    <string name="error_title">Oops! Sorry!</string>
+    <string name="error_message">There was an error. Please try again.</string>
+    <string name="error_okBtnText">OK!</string>
+    <string name="network_unavailable_message">Network is unavailable!</string>
 </resources>

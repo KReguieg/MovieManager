@@ -10,4 +10,8 @@
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textColorHint">#FFFFFF</item>
     </style>
+
+    <style name="App_CheckBoxStyle" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <!-- TODO: Edit CheckboxStyle-->
+    </style>
 </resources>
